@@ -94,6 +94,5 @@ kubectl create -f ./helloworld/dubbo/kubernetes/server.yaml
 kubectl create -f ./helloworld/dubbo/kubernetes/client.yaml
 
 # read the client log
-
 kubectl logs -f client
 ```
