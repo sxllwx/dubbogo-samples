@@ -73,3 +73,27 @@ cd ./target/linux/user_info_client-0.3.1-20190517-0921-release
 # if $SUFFIX = "", config file is client.yml
 sh ./bin/load_user_info_client.sh start $SUFFIX
 ```
+
+kubernetes 
+
+```bash 
+
+# create service-account
+kubectl create -f ./helloworld/dubbo/kubernetes/sa.yaml
+
+# create role 
+kubectl create -f ./helloworld/dubbo/kubernetes/role.yaml
+
+# bind role and service-account
+kubectl create -f ./helloworld/dubbo/kubernetes/role-binding.yaml
+
+# create server
+kubectl create -f ./helloworld/dubbo/kubernetes/server.yaml
+
+# create client
+kubectl create -f ./helloworld/dubbo/kubernetes/client.yaml
+
+# read the client log
+
+kubectl logs -f client
+```
